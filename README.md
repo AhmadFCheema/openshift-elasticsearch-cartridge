@@ -5,7 +5,7 @@ Downloadable Elasticsearch 5.2.2 cartridge for OpenShift.
 To create your scalable Elasticsearch app, run:
 
 ````bash
-rhc app create <your app name> http://cartreflect-claytondev.rhcloud.com/github/AhmadFCheema/openshift-elasticsearch-cartridge -s
+rhc app create <your app name> "http://cartreflect-claytondev.rhcloud.com/github/AhmadFCheema/openshift-elasticsearch-cartridge?commit=6b6e13d9ec4a2bb732d53b31687a86093baa88e4" -s
 ````
 
 **NOTE:** Your app currently must be a scalable app or this cartridge will not run.
