@@ -10,6 +10,6 @@ EOF
     exit 1
 fi
 
-ES_CLASSPATH="$ES_HOME/lib/elasticsearch-5.3.2.jar:$ES_HOME/lib/*"
+ES_CLASSPATH="$ES_HOME/lib/elasticsearch-5.2.2.jar:$ES_HOME/lib/*"
 # Direct to correct Java version
 export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0; export PATH=$JAVA_HOME/bin:$PATH

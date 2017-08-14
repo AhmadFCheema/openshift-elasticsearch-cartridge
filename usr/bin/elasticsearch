@@ -129,7 +129,7 @@ if [ "x$ES_INCLUDE" = "x" ]; then
                    /usr/local/share/elasticsearch/elasticsearch.in.sh \
                    /opt/elasticsearch/elasticsearch.in.sh \
                    ~/.elasticsearch.in.sh \
-                   "$ES_HOME/bin/elasticsearch.in.sh" \
+                   $ES_HOME/bin/elasticsearch.in.sh \
                    "`dirname "$0"`"/elasticsearch.in.sh; do
         if [ -r "$include" ]; then
             . "$include"
@@ -170,13 +170,6 @@ fi
 if [ "x$JAVA_OPTS" != "x" ]; then
     echo "Warning: Ignoring JAVA_OPTS=$JAVA_OPTS"
     echo "Please pass JVM parameters via ES_JAVA_OPTS instead"
-fi
-
-"$JAVA" -cp "$ES_CLASSPATH" org.elasticsearch.tools.JavaVersionChecker
-
-if [ $? -ne 0 ]; then
-    echo "Elasticsearch requires at least Java 8 but your Java version from $JAVA does not meet this requirement"
-    exit 1
 fi
 
 # full hostname passed through cut for portability on systems that do not support hostname -s

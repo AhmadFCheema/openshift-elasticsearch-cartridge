@@ -15,7 +15,7 @@
 ##   case folding, collation support, and transliteration.
 ##
 ## URL:
-##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/analysis-icu.html
+##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.2/analysis-icu.html
 
 ## Uncomment line below to install this plugin
 ## analysis-icu
@@ -24,7 +24,7 @@
 ##   The EC2 discovery plugin uses the AWS API for unicast discovery.
 ##
 ## URL:
-##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/discovery-ec2.html
+##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.2/discovery-ec2.html
 
 ## Uncomment line below to install this plugin
 ## discovery-ec2
@@ -35,7 +35,7 @@
 ## extraction library Tika.
 ##
 ## URL:
-##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/ingest-attachment.html
+##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.2/ingest-attachment.html
 
 ## Uncomment line below to install this plugin
 ## ingest-attachment
@@ -45,7 +45,7 @@
 ## indexes the size in bytes of the original _source field.
 ##
 ## URL:
-##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/mapper-size.html
+##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.2/mapper-size.html
 
 ## Uncomment line below to install this plugin
 ## mapper-size
@@ -55,7 +55,7 @@
 ## for java and lucene framework into elasticsearch.
 ##
 ## URL:
-##   https://github.com/imotov/elasticsearch-analysis-morphology/tree/5.3
+##   https://github.com/imotov/elasticsearch-analysis-morphology/tree/5.2
 
 ## Uncomment line below to install this plugin
-## elasticsearch-analysis-morphology=http://dl.bintray.com/content/imotov/elasticsearch-plugins/org/elasticsearch/elasticsearch-analysis-morphology/5.3.2/elasticsearch-analysis-morphology-5.3.2.zip
+## elasticsearch-analysis-morphology=http://dl.bintray.com/content/imotov/elasticsearch-plugins/org/elasticsearch/elasticsearch-analysis-morphology/5.2.2/elasticsearch-analysis-morphology-5.2.2.zip

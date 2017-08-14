@@ -1,11 +1,11 @@
 Name: elasticsearch
 Cartridge-Short-Name: ELASTICSEARCH
-Display-Name: ElasticSearch 5.3.2
-Description: "ElasticSearch 5.3.2"
-Version: 5.3.2
+Display-Name: ElasticSearch 5.2.2
+Description: "ElasticSearch 5.2.2"
+Version: 5.2.2
 License: Apache
 Vendor: elasticsearch.org
-Cartridge-Version: 5.3.2
+Cartridge-Version: 5.2.2
 Cartridge-Vendor: ahmadfcheema
 
 Categories:
@@ -14,7 +14,7 @@ Categories:
 
 Provides:
   - elasticsearch
-  - elasticsearch-5.3.2
+  - elasticsearch-5.2.2
 
 Publishes:
   publish-unicast-host:
