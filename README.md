@@ -23,13 +23,11 @@ To install [Elasticsearch plugins](https://www.elastic.co/guide/en/elasticsearch
 * SSH into your OpenShift application
 * Run commands:
 ```bash
-chmod 700 elasticsearch/usr/bin/elasticsearch-plugin
 export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0; export PATH=$JAVA_HOME/bin:$PATH
 elasticsearch/usr/bin/elasticsearch-plugin install <plugin_name>
 ```
- * The first command gives permission for running the plugin installation script (needs to be run only once).
- * The second command directs to the correct Java version (i.e. Java 8).
- * The third command installs the plugin. Plugin names can be found from [here](https://www.elastic.co/guide/en/elasticsearch/plugins/current/index.html). For example: `elasticsearch/usr/bin/elasticsearch-plugin install analysis-icu`.
+ * The first command directs to the correct Java version (i.e. Java 8).
+ * The second command installs the plugin. Plugin names can be found from [here](https://www.elastic.co/guide/en/elasticsearch/plugins/current/index.html). For example: `elasticsearch/usr/bin/elasticsearch-plugin install analysis-icu`.
 
 **OR**
 
