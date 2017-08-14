@@ -1,5 +1,5 @@
 ##
-## ElasticSearch plugins to install, one per line.
+## Elasticsearch plugins to install, one per line.
 ## Edit this file, commit and push. All plugins will be
 ## installed inside all gears.
 ##
@@ -10,52 +10,52 @@
 ##
 
 ## Description:
-##   ElasticSearch-head is a web front end for browsing and
-##   interacting with an Elastic Search cluster.
+##   Adds extended Unicode support using the ICU libraries, including better
+##   analysis of Asian languages, Unicode normalization, Unicode-aware
+##   case folding, collation support, and transliteration.
 ##
 ## URL:
-##   http://mobz.github.io/elasticsearch-head
+##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/analysis-icu.html
 
 ## Uncomment line below to install this plugin
-## mobz/elasticsearch-head
+## analysis-icu
 
 ## Description:
-##   Paramedic is a simple yet sexy tool to monitor and inspect
-##   ElasticSearch clusters. It displays real-time statistics and
-##   information about your nodes and indices, as well as shard
-##   allocation within the cluster.
+##   The EC2 discovery plugin uses the AWS API for unicast discovery.
 ##
 ## URL:
-##   https://github.com/karmi/elasticsearch-paramedic
+##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/discovery-ec2.html
 
 ## Uncomment line below to install this plugin
-## karmi/elasticsearch-paramedic
+## discovery-ec2
 
 ## Description:
-##   Site plugin for Elasticsearch to help understand and debug queries.
+##   The ingest attachment plugin lets Elasticsearch extract file attachments
+## in common formats (such as PPT, XLS, and PDF) by using the Apache text
+## extraction library Tika.
 ##
 ## URL:
-##   https://github.com/polyfractal/elasticsearch-inquisitor
+##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/ingest-attachment.html
 
 ## Uncomment line below to install this plugin
-## polyfractal/elasticsearch-inquisitor
+## ingest-attachment
 
 ## Description:
-##   SegmentSpy is a tool to watch the segments in your indices.
-##   Segment graphs update in real-time, allowing you to watch as
-##   ElasticSearch (Lucene) merges your segments
+##   The mapper-size plugin provides the _size meta field which, when enabled,
+## indexes the size in bytes of the original _source field.
 ##
 ## URL:
-##   https://github.com/polyfractal/elasticsearch-segmentspy
+##   https://www.elastic.co/guide/en/elasticsearch/plugins/5.3/mapper-size.html
 
 ## Uncomment line below to install this plugin
-## polyfractal/elasticsearch-segmentspy
+## mapper-size
 
 ## Description:
-## Plugin shows the elasticsearch node and cluster stats.
+## The Morphological Analysis plugin integrates Russian and English morphology
+## for java and lucene framework into elasticsearch.
 ##
 ## URL:
-##   http://www.elasticsearch.org/overview/marvel/
+##   https://github.com/imotov/elasticsearch-analysis-morphology/tree/5.3
 
 ## Uncomment line below to install this plugin
-## elasticsearch/marvel/latest
+## elasticsearch-analysis-morphology=http://dl.bintray.com/content/imotov/elasticsearch-plugins/org/elasticsearch/elasticsearch-analysis-morphology/5.3.2/elasticsearch-analysis-morphology-5.3.2.zip

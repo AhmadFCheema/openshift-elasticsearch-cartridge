@@ -1,18 +1,23 @@
 #!/bin/bash -e
 
+# Direct to correct Java version
+export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0; export PATH=$JAVA_HOME/bin:$PATH
+# Make "bin/elasticsearch-plugin" executable
+chmod 700 $OPENSHIFT_ELASTICSEARCH_DIR/usr/bin/elasticsearch-plugin
+
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 PID_FILE=$OPENSHIFT_ELASTICSEARCH_DIR/run/elasticsearch.pid
 
-function _install_plugins()
+function _es_install_plugins()
 {
-  local PLUGIN_CMD="$OPENSHIFT_ELASTICSEARCH_DIR/usr/bin/plugin -Des.path.plugins=$OPENSHIFT_DATA_DIR/elasticsearch-plugins"
+  local PLUGIN_CMD="$OPENSHIFT_ELASTICSEARCH_DIR/usr/bin/elasticsearch-plugin"
 
-  local old_plugins=$($PLUGIN_CMD --list | awk '/-/{print $2}' | xargs)
-  if [ -n "$old_plugins"  -a "$old_plugins" != "No" ]; then #ARGH!
+  local old_plugins=$($PLUGIN_CMD list | xargs)
+  if [ -n "$old_plugins" -a "$old_plugins" != "No" ]; then #ARGH!
     echo "Removing old ElasticSearch plugins..."
     for plugin in $old_plugins; do
-      $PLUGIN_CMD --remove $plugin
+      $PLUGIN_CMD remove $plugin
     done
   fi
 
@@ -23,17 +28,17 @@ function _install_plugins()
   if [ "${plugins}" ]; then
     for plugin in ${plugins}; do
       local name=$(echo $plugin | cut -f 1 -d =)
-      local url=$(echo $plugin | cut -f 2 -d =)
+      local url=$(echo $plugin | cut -f 2-5 -d =)
       if [ "$name" == "$url" ]; then
-        $PLUGIN_CMD --install $name
+        $PLUGIN_CMD install $name
       else
-        $PLUGIN_CMD --url $url --install $name
+        $PLUGIN_CMD install $url
       fi
     done
   fi
 }
 
-function _is_running() {
+function _es_isrunning() {
   if [ -f $PID_FILE ]; then
     local zpid=$(cat $PID_FILE 2> /dev/null)
     local myid=$(id -u)
@@ -46,7 +51,7 @@ function _is_running() {
 }
 
 function start() {
-  if _is_running; then
+  if _es_isrunning; then
     echo "ElasticSearch is already running" 1>&2
     return 0
   fi
@@ -57,7 +62,7 @@ function start() {
 }
 
 function stop() {
-  if ! _is_running; then
+  if ! _es_isrunning; then
     echo "ElasticSearch is already stopped" 1>&2
     return 0
   fi
@@ -71,7 +76,7 @@ function stop() {
     local ret=$?
     if [ $ret -eq 0 ]; then
       local TIMEOUT=10
-      while [ $TIMEOUT -gt 0 ] &&  _is_running ; do
+      while [ $TIMEOUT -gt 0 ] &&  _es_isrunning ; do
         /bin/kill -0 "$zpid" > /dev/null 2>&1  ||  break
         sleep 1
         let TIMEOUT=${TIMEOUT}-1
@@ -87,7 +92,7 @@ function restart() {
 
 function status() {
   local output=""
-  if output=$(curl http://$OPENSHIFT_RUBY_IP:$OPENSHIFT_RUBY_PORT/ &> /dev/null); then
+  if output=$(curl http://$OPENSHIFT_ELASTICSEARCH_IP:$OPENSHIFT_ELASTICSEARCH_PORT/ &> /dev/null); then
     client_result "Application is running"
   else
     client_result "Application is either stopped or inaccessible"
@@ -95,7 +100,8 @@ function status() {
 }
 
 function deploy() {
-   _install_plugins
+  _es_install_plugins
+  restart
 }
 
 case "$1" in
