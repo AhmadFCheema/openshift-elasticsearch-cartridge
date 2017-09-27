@@ -1,3 +1,12 @@
+****
+<h1 align="center">
+OBSOLETE Project
+</h1>
+
+On August 25th, 2017 users were informed of the subsequent [sunset](https://blog.openshift.com/migrate-to-v3-v2-eol/) of OpenShift Online v2 platform by September 30th, 2017 (extended to December 31st, 2017 for paying customers). The next generation v3 platform [replaces](https://docs.openshift.com/enterprise/3.1/release_notes/v2_vs_v3.html#cartridges-vs-images) Cartridges with Images, therefore, making this quick Elasticsearch set-up solution now, unfortunately obsolete. [Comments](https://disqus.com/home/discussion/openshift-blog/get_ready_to_migrate_to_openshift_online_3/) on the "sunset" blog post records some of the incredulity expressed by users on the decision.
+
+This project is kept for archival purposes and any possible benefit it may still provide.
+****
 # OpenShift Elasticsearch 5.3.2 Cartridge
 
 Downloadable Elasticsearch 5.3.2 cartridge for OpenShift.
